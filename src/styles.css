@@ -1,0 +1,21 @@
+.table-container {
+    max-height: calc(100vh - 20vh);
+    overflow-y: auto;
+    scrollbar-width: none;
+    overflow-x: hidden;
+  }
+  .fonoinput{
+
+    overflow: hidden;
+    
+
+  }
+  body {
+    overflow: hidden; /* Oculta la barra de desplazamiento del cuerpo del documento */
+  }
+  
+  /* Establece una altura máxima para el contenedor principal y permite que el contenido se desplace dentro de él */
+  #root {
+    max-height: 100vh;
+    overflow-y: auto; /* Muestra la barra de desplazamiento solo cuando sea necesario */
+  }

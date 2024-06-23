@@ -45,3 +45,6 @@
   max-height: calc(100vh - 200px); /* Establece la altura máxima de la tabla */
   overflow-y: auto; /* Habilita el desplazamiento vertical si la tabla es más grande que la altura máxima */
 }
+
+
+

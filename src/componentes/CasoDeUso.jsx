@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import GenericTable from '../componentes/tables/GenericTable';
 
-const CasoDeUso = ({ titulo, columnas, dataUrl, botonTexto, ComponenteFormulario, proveedores }) => {
+const CasoDeUso = ({ titulo, columnas, dataUrl, botonTexto, ComponenteFormulario }) => {
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
 
   return (
@@ -21,7 +21,7 @@ const CasoDeUso = ({ titulo, columnas, dataUrl, botonTexto, ComponenteFormulario
             </button>
           </div>
           <div className="bg-white shadow-md rounded-lg p-4 pt-5">
-            <GenericTable columns={columnas} dataUrl={dataUrl} proveedores={proveedores} />
+            <GenericTable columns={columnas} dataUrl={dataUrl} />
           </div>
         </div>
       </div>

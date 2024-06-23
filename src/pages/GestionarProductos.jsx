@@ -1,3 +1,4 @@
+// GestionarProductos.jsx
 import React from 'react';
 import CasoDeUso from '../componentes/CasoDeUso';
 import FormularioProducto from '../componentes/Formularios/FormularioProducto';
@@ -12,36 +13,32 @@ const GestionarProductos = ({ proveedores }) => {
   };
 
   const columns = [
+   
     {
-      id: 'id_Producto', // Agregar un id único
-      Header: 'ID Producto',
-      accessor: 'id_Producto',
-    },
-    {
-      id: 'nombre', // Agregar un id único
+      id: 'nombre',
       Header: 'Nombre',
       accessor: 'nombre',
     },
     {
-      id: 'precio', // Agregar un id único
+      id: 'precio',
       Header: 'Precio',
       accessor: 'precio',
     },
     {
-      id: 'stock_minimo', // Agregar un id único
+      id: 'stock_minimo',
       Header: 'Stock Mínimo',
       accessor: 'stock_minimo',
     },
     {
-      id: 'stock_actual', // Agregar un id único
+      id: 'stock_actual',
       Header: 'Stock Actual',
       accessor: 'stock_actual',
     },
     {
-      id: 'id_proveedor', // Agregar un id único
+      id: 'id_proveedor',
       Header: 'Proveedor',
       accessor: 'id_proveedor',
-      Cell: ({ value }) => obtenerNombreProveedor(value),
+     
     },
   ];
 
@@ -52,7 +49,7 @@ const GestionarProductos = ({ proveedores }) => {
       dataUrl="http://localhost:3000/productos"
       botonTexto="Agregar Producto"
       ComponenteFormulario={FormularioProducto}
-      proveedores={proveedores}
+     
     />
   );
 };

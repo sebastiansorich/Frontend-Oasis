@@ -5,12 +5,15 @@ import {
   flexRender,
   getCoreRowModel,
 } from '@tanstack/react-table';
+import { handleEdit, handleSaveEdit } from './handleEdit';
+import { handleDelete } from './handleDelete';
 
-const GenericTable = ({ columns, dataUrl, proveedores, onEdit }) => {
+const GenericTable = ({ columns, dataUrl, onEdit }) => {
   const [data, setData] = useState([]);
   const [columnConfig, setColumnConfig] = useState([]);
   const [editedItem, setEditedItem] = useState(null);
   const [editedIndex, setEditedIndex] = useState(null);
+  const [loading, setLoading] = useState(true); // Estado para controlar la carga inicial
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,73 +22,14 @@ const GenericTable = ({ columns, dataUrl, proveedores, onEdit }) => {
         const result = await response.json();
         setData(result);
         console.log('Data fetched:', result);
+        setLoading(false); // Marcar la carga como completa
       } catch (error) {
         console.error('Error fetching data: ', error);
       }
     };
 
     fetchData();
-  }, [dataUrl]);
-
-  useEffect(() => {
-    const updateColumns = () => {
-      const newColumnConfig = [...columns];
-
-      newColumnConfig.forEach(col => {
-        if (col.accessor === 'id_Producto' || col.accessor === 'id_Proveedor') {
-          col.cell = info => info.row.original[col.accessor];
-        }
-      });
-
-      return newColumnConfig;
-    };
-
-    setColumnConfig(updateColumns());
-  }, [columns]);
-
-  const handleEdit = (rowIndex) => {
-    const editedRow = data[rowIndex];
-    setEditedItem({ ...editedRow });
-    setEditedIndex(rowIndex);
-  };
-
-  const handleDelete = async (row) => {
-    const idField = columns.find(col => col.accessor.startsWith('id_')); // Busca el campo de ID dinámicamente
-    const id = row[idField.accessor];
-
-    if (!id) {
-      console.error('No se pudo determinar el ID del elemento a eliminar', row);
-      return;
-    }
-
-    try {
-      const response = await fetch(`${dataUrl}/${id}`, {
-        method: 'DELETE',
-      });
-
-      if (response.ok) {
-        setData(data.filter(item => item[idField.accessor] !== id));
-      } else {
-        const errorText = await response.text();
-        console.error('Error al eliminar el elemento: ', response.status, errorText);
-      }
-    } catch (error) {
-      console.error('Error al eliminar el elemento: ', error);
-    }
-  };
-
-  const handleSaveEdit = () => {
-    // Guardar los cambios en el estado `data`
-    setData(prevData => {
-      const newData = [...prevData];
-      newData[editedIndex] = editedItem;
-      return newData;
-    });
-
-    // Limpiar los estados de edición
-    setEditedItem(null);
-    setEditedIndex(null);
-  };
+  }, [dataUrl]); // Asegurarse de que dataUrl esté como dependencia si cambia
 
   const columnHelper = createColumnHelper();
   const newColumnConfig = columns.map((col) => columnHelper.accessor(col.accessor, {
@@ -101,7 +45,7 @@ const GenericTable = ({ columns, dataUrl, proveedores, onEdit }) => {
         {editedIndex === rowIndex ? (
           <>
             <button
-              onClick={handleSaveEdit}
+              onClick={() => handleSaveEdit(data, editedItem, editedIndex, setData, setEditedItem, setEditedIndex)}
               className="text-green-600 hover:text-green-900"
             >
               Guardar
@@ -118,14 +62,14 @@ const GenericTable = ({ columns, dataUrl, proveedores, onEdit }) => {
           </>
         ) : (
           <button
-            onClick={() => handleEdit(rowIndex)}
+            onClick={() => handleEdit(rowIndex, data, setEditedItem, setEditedIndex)}
             className="text-blue-600 hover:text-blue-900"
           >
             Editar
           </button>
         )}
         <button
-          onClick={() => handleDelete(info.row.original)}
+          onClick={() => handleDelete(info.row.original, columns, dataUrl, data, setData)}
           className="text-red-600 hover:text-red-900"
         >
           Eliminar
@@ -139,6 +83,20 @@ const GenericTable = ({ columns, dataUrl, proveedores, onEdit }) => {
     columns: newColumnConfig,
     getCoreRowModel: getCoreRowModel(),
   });
+
+  if (loading) {
+    return (
+      <div className='spinner-container ml-80'>
+        <div className='spinner'>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div >Cargando datos...</div>
+      </div>
+    );
+  }
 
   return (
     <table className="min-w-full divide-y divide-gray-200">

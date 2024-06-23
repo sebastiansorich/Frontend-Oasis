@@ -3,10 +3,7 @@ import CasoDeUso from '../componentes/CasoDeUso';
 import FormularioCargos from '../componentes/Formularios/FormularioCargos';
 
 const columns = [
-  {
-    Header: 'id_cargo',
-    accessor: 'id_cargo',
-  },
+
   {
     Header: 'nombre',
     accessor: 'nombre',

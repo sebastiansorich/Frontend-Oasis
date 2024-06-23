@@ -8,7 +8,7 @@ const Homepage = () => {
 
 
   return (
-    <div className="bg-gray-100 w-full h-screen justify-center items-center ml-80 ">
+    <div className="bg-gray-100 w-full h-screen justify-center items-center ml-0 ">
       {/* <img src="/src/assets/Oasisl_logo.png" alt="Logo de la empresa" className=" w-max h-48 my-32" /> */}
 
       <h1 className="bg-gray-300 p-4 m-4  rounded-lg">

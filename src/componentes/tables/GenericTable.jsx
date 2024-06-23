@@ -99,50 +99,52 @@ const GenericTable = ({ columns, dataUrl, onEdit }) => {
   }
 
   return (
-    <table className="min-w-full divide-y divide-gray-200">
-      <thead className="bg-gray-50">
-        {table.getHeaderGroups().map(headerGroup => (
-          <tr key={headerGroup.id}>
-            {headerGroup.headers.map(header => (
-              <th
-                key={header.id}
-                scope="col"
-                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-              >
-                {flexRender(header.column.columnDef.header, header.getContext())}
-              </th>
-            ))}
-          </tr>
-        ))}
-      </thead>
-      <tbody className="bg-white divide-y divide-gray-200">
-        {table.getRowModel().rows.map((row, rowIndex) => (
-          <tr key={row.id}>
-            {row.getVisibleCells().map(cell => (
-              <td key={cell.id} className="px-6 py-4 whitespace-nowrap">
-                {editedIndex === rowIndex ? (
-                  /* Renderizar campos editables si la fila está siendo editada */
-                  <input
-                    type="text"
-                    value={editedItem[cell.column.id]}
-                    onChange={(e) => {
-                      const newValue = e.target.value;
-                      setEditedItem(prevState => ({
-                        ...prevState,
-                        [cell.column.id]: newValue,
-                      }));
-                    }}
-                  />
-                ) : (
-                  /* Mostrar valor normalmente si no se está editando */
-                  flexRender(cell.column.columnDef.cell, cell.getContext())
-                )}
-              </td>
-            ))}
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <div className="overflow-x-auto">
+      <table className="min-w-full divide-y divide-gray-200">
+        <thead className="bg-gray-50">
+          {table.getHeaderGroups().map(headerGroup => (
+            <tr key={headerGroup.id}>
+              {headerGroup.headers.map(header => (
+                <th
+                  key={header.id}
+                  scope="col"
+                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
+                  {flexRender(header.column.columnDef.header, header.getContext())}
+                </th>
+              ))}
+            </tr>
+          ))}
+        </thead>
+        <tbody className="bg-white divide-y divide-gray-200">
+          {table.getRowModel().rows.map((row, rowIndex) => (
+            <tr key={row.id}>
+              {row.getVisibleCells().map(cell => (
+                <td key={cell.id} className="px-6 py-4 whitespace-nowrap">
+                  {editedIndex === rowIndex ? (
+                    /* Renderizar campos editables si la fila está siendo editada */
+                    <input
+                      type="text"
+                      value={editedItem[cell.column.id]}
+                      onChange={(e) => {
+                        const newValue = e.target.value;
+                        setEditedItem(prevState => ({
+                          ...prevState,
+                          [cell.column.id]: newValue,
+                        }));
+                      }}
+                    />
+                  ) : (
+                    /* Mostrar valor normalmente si no se está editando */
+                    flexRender(cell.column.columnDef.cell, cell.getContext())
+                  )}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 

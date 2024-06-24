@@ -8,7 +8,7 @@ const SelectNotaEntrega2 = ({ value, onChange, className }) => {
     const [Notas, setNotas] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/notasEntrega/pendientes')
+        axios.get('https://backend-oasis.onrender.com/notasEntrega/pendientes')
             .then(response => {
                 const options = response.data.map(nota => ({
                     value: nota.id_nota_entrega,

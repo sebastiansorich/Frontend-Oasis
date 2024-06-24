@@ -18,7 +18,7 @@ const GestionarNIT = () => {
         <CasoDeUso
             titulo="Gestionar NITs"
             columnas={columns}
-            dataUrl="http://localhost:3000/nit"
+            dataUrl="https://backend-oasis.onrender.com/nit"
             botonTexto="Agregar NIT"
             ComponenteFormulario={FormularioNIT}
         />

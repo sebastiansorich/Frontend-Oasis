@@ -41,7 +41,7 @@ const FormularioNotaEntrega = ({ onClose }) => {
     };
 
     try {
-      const response = await fetch('http://localhost:3000/notasEntrega', {
+      const response = await fetch('https://backend-oasis.onrender.com/notasEntrega', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -19,7 +19,7 @@ const FormularioNIT = ({ onClose, onCrearNIT }) => {
     };
 
     try {
-      const response = await fetch('http://localhost:3000/nit', {
+      const response = await fetch('https://backend-oasis.onrender.com/nit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

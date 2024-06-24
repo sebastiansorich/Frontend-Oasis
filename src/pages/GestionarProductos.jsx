@@ -40,7 +40,7 @@ const GestionarProductos = ({ proveedores }) => {
     },
     {
       id: 'id_proveedor',
-      Header: 'Proveedor',
+      Header: 'Codigo Proveedor',
       accessor: 'id_proveedor',
       Cell: ({ value }) => obtenerNombreProveedor(value),
     },
@@ -50,11 +50,11 @@ const GestionarProductos = ({ proveedores }) => {
     <CasoDeUso
       titulo="Gestionar Productos"
       columnas={columns}
-      dataUrl="http://localhost:3000/productos"
+      dataUrl="https://backend-oasis.onrender.com/productos"
       botonTexto="Agregar Producto"
       ComponenteFormulario={FormularioProducto}
       botonReportes={"Generar Reporte"}
-      linkreporte={"http://localhost:3000/Reportes/generar_inventario/"}
+      linkreporte={"https://backend-oasis.onrender.com/Reportes/generar_inventario/"}
      
     />
   );

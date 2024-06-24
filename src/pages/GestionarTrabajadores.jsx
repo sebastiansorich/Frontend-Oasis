@@ -26,7 +26,7 @@ const GestionarTrabajadores = () => {
         <CasoDeUso
             titulo="Gestionar Trabajadores"
             columnas={columns}
-            dataUrl="http://localhost:3000/trabajadores"
+            dataUrl="https://backend-oasis.onrender.com/trabajadores"
             botonTexto="Agregar Trabajador"
             ComponenteFormulario={FormularioTrabajador}
         />

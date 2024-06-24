@@ -29,7 +29,7 @@ const GestionarNotaPedido = () => {
     <CasoDeUso
       titulo="Gestionar Notas de Recibo"
       columnas={columns}
-      dataUrl="http://localhost:3000/notapedidocompra"
+      dataUrl="https://backend-oasis.onrender.com/notapedidocompra"
       botonTexto="Agregar Nota de Recibo"
       ComponenteFormulario={FormularioNotaPedido}
     />

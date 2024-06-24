@@ -29,7 +29,7 @@ const FormularioProducto = ({ onClose, onCrearProducto }) => {
     };
 
     try {
-      const response = await fetch('http://localhost:3000/productos', {
+      const response = await fetch('https://backend-oasis.onrender.com/productos', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

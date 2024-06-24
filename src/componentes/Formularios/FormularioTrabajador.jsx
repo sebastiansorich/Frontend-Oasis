@@ -14,7 +14,7 @@ const FormularioTrabajador = ({ onClose, onCrearTrabajador }) => {
   useEffect(() => {
     const fetchCargos = async () => {
       try {
-        const response = await fetch('http://localhost:3000/cargos');
+        const response = await fetch('https://backend-oasis.onrender.com/cargos');
         if (!response.ok) {
           throw new Error('Error al obtener la lista de cargos');
         }
@@ -49,7 +49,7 @@ const FormularioTrabajador = ({ onClose, onCrearTrabajador }) => {
     };
 
     try {
-      const response = await fetch('http://localhost:3000/trabajadores', {
+      const response = await fetch('https://backend-oasis.onrender.com/trabajadores', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

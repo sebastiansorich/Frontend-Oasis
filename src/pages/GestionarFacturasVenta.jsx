@@ -27,7 +27,7 @@ const GestionarFacturas = () => {
         <CasoDeUso
             titulo="Gestionar Facturas"
             columnas={columns}
-            dataUrl="http://localhost:3000/facturas"
+            dataUrl="https://backend-oasis.onrender.com/facturas"
             botonTexto="Agregar Factura"
             ComponenteFormulario={FormularioFactura}
         />

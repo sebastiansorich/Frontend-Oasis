@@ -30,7 +30,7 @@ const GestionarProveedores = () => {
         <CasoDeUso
             titulo="Gestionar Proveedores"
             columnas={columns}
-            dataUrl="http://localhost:3000/proveedores"
+            dataUrl="https://backend-oasis.onrender.com/proveedores"
             botonTexto="Agregar Proveedor"
             ComponenteFormulario={FormularioProveedor}
         />

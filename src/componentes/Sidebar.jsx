@@ -113,7 +113,7 @@ const Sidebar = () => {
               >
                 <li className="cursor-pointer flex items-center mt-1 content-center">
                   <i className="fas fa-clipboard-list p-2"></i>
-                  <span className="block py-2 pl-1">Notas de Pedido</span>
+                  <span className="block py-2 pl-1">Notas de Recibo</span>
                 </li>
               </Link>
             </ul>

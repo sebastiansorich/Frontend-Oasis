@@ -7,7 +7,7 @@ const SelectNIT = ({ value, onChange, className }) => {
     const [NITs, setNITs] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/nit')
+        axios.get('https://backend-oasis.onrender.com/nit')
             .then(response => {
                 const options = response.data.map(nit => ({
                     value: nit.nit,

@@ -35,7 +35,7 @@ const GestionarNotaEntrega = () => {
         <CasoDeUso
             titulo="Gestionar Notas de Entrega"
             columnas={columns}
-            dataUrl="http://localhost:3000/notasEntrega"
+            dataUrl="https://backend-oasis.onrender.com/notasEntrega"
             botonTexto="Agregar Nota de Entrega"
             ComponenteFormulario={FormularioNotaEntrega}
         />

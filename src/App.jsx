@@ -22,7 +22,7 @@ export default function App() {
   useEffect(() => {
     const fetchProveedores = async () => {
       try {
-        const response = await fetch("http://localhost:3000/proveedores");
+        const response = await fetch("https://backend-oasis.onrender.com/proveedores");
         const data = await response.json();
         setProveedores(data);
         console.log('Proveedores fetched:', data);

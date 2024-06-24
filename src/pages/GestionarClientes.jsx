@@ -31,7 +31,7 @@ const GestionarClientes = () => {
         <CasoDeUso
             titulo="Gestionar Clientes"
             columnas={columns}
-            dataUrl="http://localhost:3000/clientes"
+            dataUrl="https://backend-oasis.onrender.com/clientes"
             botonTexto="Agregar Cliente" 
             ComponenteFormulario={FormularioCliente}
         />

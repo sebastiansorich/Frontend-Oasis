@@ -6,7 +6,7 @@ const SelectProductos = ({ value, onChange, className }) => {
     const [productos, setProductos] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/productos')
+        axios.get('https://backend-oasis.onrender.com/productos')
             .then(response => {
                 const options = response.data.map(producto => ({
                     value: producto.id_Producto,

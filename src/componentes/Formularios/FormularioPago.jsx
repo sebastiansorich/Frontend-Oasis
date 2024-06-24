@@ -20,7 +20,7 @@ const FormularioPago = ({ onClose, onRegistrarPago }) => {
     };
 
     try {
-      const response = await fetch('http://localhost:3000/pagos', {
+      const response = await fetch('https://backend-oasis.onrender.com/pagos', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

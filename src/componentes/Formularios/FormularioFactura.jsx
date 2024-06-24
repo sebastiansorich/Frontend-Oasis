@@ -30,7 +30,7 @@ const FormularioFactura = ({ onClose, onRegistrarFactura }) => {
     };
 
     try {
-      const response = await fetch('http://localhost:3000/facturas', {
+      const response = await fetch('https://backend-oasis.onrender.com/facturas', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

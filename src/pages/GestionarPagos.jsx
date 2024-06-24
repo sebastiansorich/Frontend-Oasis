@@ -26,7 +26,7 @@ const GestionarPagos = () => {
         <CasoDeUso
             titulo="Gestionar Pagos"
             columnas={columns}
-            dataUrl="http://localhost:3000/pagos"
+            dataUrl="https://backend-oasis.onrender.com/pagos"
             botonTexto="Agregar Pago"
             ComponenteFormulario={FormularioPago}
         />

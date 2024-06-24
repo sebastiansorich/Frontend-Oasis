@@ -43,7 +43,7 @@ const FormularioNotaPedido = ({ onClose, trabajadores, productos }) => {
     console.log('Datos enviados:', JSON.stringify(data)); // Verificar los datos enviados
   
     try {
-      const response = await fetch('http://localhost:3000/notapedidocompra', {
+      const response = await fetch('https://backend-oasis.onrender.com/notapedidocompra', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

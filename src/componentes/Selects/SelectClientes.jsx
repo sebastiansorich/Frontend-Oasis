@@ -7,7 +7,7 @@ const SelectClientes = ({ value, onChange, className }) => {
     const [clientes, setClientes] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/clientes')
+        axios.get('https://backend-oasis.onrender.com/clientes')
             .then(response => {
                 const options = response.data.map(cliente => ({
                     value: cliente.id_cliente,

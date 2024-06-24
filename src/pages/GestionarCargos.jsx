@@ -21,7 +21,7 @@ const GestionarCargos = () => {
     <CasoDeUso
       titulo="Gestionar Cargos"
       columnas={columns}
-      dataUrl="http://localhost:3000/cargos"
+      dataUrl="https://backend-oasis.onrender.com/cargos"
       botonTexto="Agregar cargo"
       ComponenteFormulario={FormularioCargos}
 

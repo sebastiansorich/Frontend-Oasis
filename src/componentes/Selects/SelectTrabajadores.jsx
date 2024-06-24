@@ -7,7 +7,7 @@ const SelectTrabajadores = ({ value, onChange, className }) => {
     const [trabajadores, setTrabajadores] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/trabajadores')
+        axios.get('https://backend-oasis.onrender.com/trabajadores')
             .then(response => {
                 const options = response.data.map(trabajador => ({
                     value: trabajador.id_trabajador,

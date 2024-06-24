@@ -1,6 +1,6 @@
 // App.jsx
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import Sidebar from "./componentes/Sidebar";
 import Homepage from "./pages/Homepage";
 import GestionarProductos from "./pages/GestionarProductos";
@@ -35,7 +35,7 @@ export default function App() {
   }, []);
   return (
     <div className="w-full h-full flex flex-col">
-    <BrowserRouter>
+    <HashRouter>
       <div className="flex flex-grow">
         <Sidebar />
         <Routes>
@@ -54,7 +54,7 @@ export default function App() {
             </Routes>
           </div>
         
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }

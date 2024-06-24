@@ -9,7 +9,7 @@ const FormularioPago = ({ onClose, onRegistrarPago }) => {
 
   const handleClose = () => {
     onClose(); // Cerrar el formulario
-    window.location.reload(); // Actualizar la página
+    history.go(0); // Recargar la página actual
   };
 
   const handleSubmit = async (e) => {

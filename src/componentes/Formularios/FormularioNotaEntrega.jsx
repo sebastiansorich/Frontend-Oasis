@@ -16,10 +16,9 @@ const FormularioNotaEntrega = ({ onClose }) => {
     newDetalles[index][name] = value;
     setDetalles(newDetalles);
   };
-
   const handleClose = () => {
     onClose(); // Cerrar el formulario
-    window.location.reload(); // Actualizar la página
+    history.go(0); // Recargar la página actual
   };
   const handleAddDetalle = () => {
     setDetalles([...detalles, { id_producto: '', cantidad: '' }]);

@@ -13,7 +13,7 @@ const FormularioCliente = ({ onClose, onCrearCliente }) => {
 
   const handleClose = () => {
     onClose(); // Cerrar el formulario
-    window.location.reload(); // Actualizar la página
+    history.go(0); // Recargar la página actual
   };
 
   const handleCrearCliente = async (e) => {

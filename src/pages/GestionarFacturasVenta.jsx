@@ -4,15 +4,15 @@ import FormularioFactura from '../componentes/Formularios/FormularioFactura';
 
 const columns = [
     {
-        Header: 'ID Factura',
+        Header: 'Codigo Factura',
         accessor: 'id_factura',
     },
     {
-        Header: 'ID Nota de Entrega',
+        Header: 'Codigo Nota de Entrega',
         accessor: 'id_nota_entrega',
     },
     {
-        Header: 'NIT Cliente',
+        Header: 'NIT',
         accessor: 'nit_cliente',
     },
     {

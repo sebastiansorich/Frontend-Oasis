@@ -13,7 +13,11 @@ const GestionarProductos = ({ proveedores }) => {
   };
 
   const columns = [
-   
+    {
+      id: 'id_Producto', // Asegúrate de tener un ID único para los productos
+      Header: 'Codigo producto',
+      accessor: 'id_Producto',
+    },
     {
       id: 'nombre',
       Header: 'Nombre',
@@ -38,7 +42,7 @@ const GestionarProductos = ({ proveedores }) => {
       id: 'id_proveedor',
       Header: 'Proveedor',
       accessor: 'id_proveedor',
-     
+      Cell: ({ value }) => obtenerNombreProveedor(value),
     },
   ];
 
@@ -49,6 +53,8 @@ const GestionarProductos = ({ proveedores }) => {
       dataUrl="http://localhost:3000/productos"
       botonTexto="Agregar Producto"
       ComponenteFormulario={FormularioProducto}
+      botonReportes={"Generar Reporte"}
+      linkreporte={"http://localhost:3000/Reportes/generar_inventario/"}
      
     />
   );

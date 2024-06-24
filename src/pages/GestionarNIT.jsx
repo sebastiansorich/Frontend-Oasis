@@ -4,11 +4,11 @@ import FormularioNIT from '../componentes/Formularios/FormularioNIT';
 
 const columns = [
     {
-        Header: 'NIT',
+        Header: 'NIT/CI',
         accessor: 'nit',
     },
     {
-        Header: 'Nombre del Cliente',
+        Header: 'Nombre',
         accessor: 'nombre_cliente',
     },
 ];

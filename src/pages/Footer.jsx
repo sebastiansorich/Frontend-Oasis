@@ -9,7 +9,7 @@ function Footer() {
       <div className="flex ">
       
       <p className='ml-0'>© 2024 OasisElectrodomesticos.</p>
-      <p className=''> v1.5</p>
+      <p className=''> v2</p>
       </div>
     </footer>
   );

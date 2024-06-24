@@ -4,7 +4,7 @@ import FormularioPago from '../componentes/Formularios/FormularioPago';
 
 const columns = [
     {
-        Header: 'ID Pago',
+        Header: 'Codigo Pago',
         accessor: 'id_pago',
     },
     {

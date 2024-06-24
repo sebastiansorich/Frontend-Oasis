@@ -4,7 +4,7 @@ import FormularioCliente from '../componentes/Formularios/FormularioCliente';
 
 const columns = [
     {
-        Header: 'ID Cliente',
+        Header: 'Codigo Cliente',
         accessor: 'id_cliente',
     },
     {

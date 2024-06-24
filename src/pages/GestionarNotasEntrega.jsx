@@ -4,15 +4,15 @@ import FormularioNotaEntrega from '../componentes/Formularios/FormularioNotaEntr
 
 const columns = [
     {
-        Header: 'ID Nota de Entrega',
+        Header: 'Codigo Nota de Entrega',
         accessor: 'id_nota_entrega',
     },
     {
-        Header: 'ID Trabajador',
+        Header: 'codigo Trabajador',
         accessor: 'id_trabajador',
     },
     {
-        Header: 'ID Cliente',
+        Header: 'Codigo Cliente',
         accessor: 'id_cliente',
     },
     {

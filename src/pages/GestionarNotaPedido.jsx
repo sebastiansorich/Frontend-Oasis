@@ -8,7 +8,7 @@ const GestionarNotaPedido = () => {
  
   const columns = [
     {
-      Header: 'ID Nota Pedido',
+      Header: 'codigo Nota Recibo',
       accessor: 'id_nota_pedido',
     },
     {
@@ -20,10 +20,6 @@ const GestionarNotaPedido = () => {
       accessor: 'fecha',
     },
     {
-      Header: 'Total',
-      accessor: 'total',
-    },
-    {
       Header: 'Estado',
       accessor: 'estado',
     },
@@ -31,10 +27,10 @@ const GestionarNotaPedido = () => {
 
   return (
     <CasoDeUso
-      titulo="Gestionar Notas de Pedido de Compra"
+      titulo="Gestionar Notas de Recibo"
       columnas={columns}
       dataUrl="http://localhost:3000/notapedidocompra"
-      botonTexto="Agregar Nota de Pedido"
+      botonTexto="Agregar Nota de Recibo"
       ComponenteFormulario={FormularioNotaPedido}
     />
   );

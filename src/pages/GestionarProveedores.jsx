@@ -4,7 +4,7 @@ import FormularioProveedor from '../componentes/Formularios/FormularioProveedor'
 
 const columns = [
     {
-        Header: 'ID Proveedor',
+        Header: 'Codigo Proveedor',
         accessor: 'id_Proveedor',
     },
     {
